@@ -7,6 +7,7 @@
 
 
 #%%
+# Merge Sort is Divide and Conquer Alg
 
 
 def merge(arr, startIdx, midIdx, endIdx):
@@ -15,6 +16,8 @@ def merge(arr, startIdx, midIdx, endIdx):
 
     leftIdx = 0
     rightIdx = 0
+
+    # Helps to swap the smaller values to the left side.
     arrIdx = startIdx
 
     # Merge the two sorted halfs into a sorted array
@@ -22,7 +25,9 @@ def merge(arr, startIdx, midIdx, endIdx):
     ## Efforts are reduced since we would only require to compare the 1st ele of each half, then move it to parent arr
 
     while leftIdx < len(leftArr) and rightIdx < len(rightArr):
-        if leftArr[leftIdx] <= rightArr[rightIdx]:
+        if (
+            leftArr[leftIdx] <= rightArr[rightIdx]
+        ):  # Stable Sort since, prioritizing left ele of same value.
             arr[arrIdx] = leftArr[leftIdx]
             leftIdx += 1
         else:
@@ -45,7 +50,10 @@ def merge(arr, startIdx, midIdx, endIdx):
 
 
 def mergeSort(arr, startIdx, endIdx):
-    if endIdx - startIdx == 0:
+
+    # Base Case, when len(arr) = 1 (Sorted sub array)
+    if endIdx - startIdx + 1 <= 1:  # Length of arr = 1
+
         return arr
 
     # Find the midIdx
@@ -66,6 +74,13 @@ def mergeSort(arr, startIdx, endIdx):
     merge(arr, startIdx, midIdx, endIdx)
     return arr
 
+
+# %%
+
+arr = [5, 2, 15, 4, 5, 1, 4, 7]
+arr2 = [3, 4, 2, 5, 1, 6]
+print(mergeSort(arr, 0, len(arr) - 1))
+print(mergeSort(arr2, 0, len(arr2) - 1))
 
 ### Time Complexity
 
@@ -94,3 +109,9 @@ def mergeSort(arr, startIdx, endIdx):
 
 ### Space Complexity
 # O(n), since we are creating new arrs for each layer (Recursion Stack)
+
+# Stable Sorting ?
+# We can code it to be unstable sort
+## Stable Sort
+
+# %%
