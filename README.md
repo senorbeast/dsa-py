@@ -9,7 +9,8 @@
 - [x] Quick Sort
 - [x] Insertion Sort
 - [x] Merge Sort
-- [ ] Bucket Sort
+- [x] Bucket Sort
+- [ ] Binary Search
 - [ ] Trees
 - [ ] Tree Traversal
 - [ ] Hashing
