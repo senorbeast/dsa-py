@@ -16,6 +16,11 @@
 ## Time Complexity
 ## Worst: O(n^2)
 ## Avg: O(nlogn)
+
+
+## Space Complexity
+# No additonal space required
+
 # If pivot is not a mean value, height of tree would can reach n
 # And n comparisions in each layer would take, Time Complexity for worst case to be O(n^2)
 
@@ -29,6 +34,8 @@
 
 #%%
 # QuickSort is unique
+# Comparing with the pivot, divide and recurse
+# Stop when divded sub array len = 1
 
 
 def quickSort(arr, startIdx, endIdx):

@@ -9,6 +9,11 @@
 #%%
 # Merge Sort is Divide and Conquer Alg
 
+# Stop when arr len = 1
+
+# Divide by mid, compare leftArr, rightArr first values, bring smallest value to the start of mother arr.
+# Append rest of left/right arr, to mother arr when other arr has exhausted.
+
 
 def merge(arr, startIdx, midIdx, endIdx):
     leftArr = arr[startIdx : midIdx + 1]

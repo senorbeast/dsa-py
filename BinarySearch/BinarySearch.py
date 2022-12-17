@@ -1,5 +1,8 @@
 ### Search for sorted stuff.
 
+# Binary Search says my guess is mid value, if not adjust the window, update mid value and go on.
+# Every adjustment of window/ 1 step, we divide our arr into half.
+
 # Eg. Dictionary, Sorted Array, Sorted LL
 
 # Binary Search
