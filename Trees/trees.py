@@ -31,6 +31,11 @@
 # Depth -> No. of nodes including itself to reach the root node.
 
 
+## Node values closest to a particular x node are
+# left most node of right sub tree of x node : Closest larger value than x node
+# right most node of left sub tree of x node : Closest smaller value than x node
+
+
 #%%
 
 
