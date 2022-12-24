@@ -11,8 +11,9 @@
 - [x] Merge Sort
 - [x] Bucket Sort
 - [x] Binary Search
-- [ ] Trees
-- [ ] Tree Traversal
+- [x] Trees
+- [x] BST
+- [x] Tree Traversal
 - [ ] Hashing
 - [ ] Graphs
 - [ ] Backtracking
