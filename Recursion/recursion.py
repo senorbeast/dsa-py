@@ -1,8 +1,13 @@
 ###### Recursion
 
-# Base Case
+# Base Case (stops recursion)
 # Nested function
 
+
+## For any recusrive alg,
+# We need a base case.
+# How the matroshka is constructed.
+# How output info of the deepest call stack is transfered to the top.
 
 #### Factorial
 

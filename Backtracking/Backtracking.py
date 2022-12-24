@@ -1,5 +1,6 @@
 # Backtracking
 
+
 # Kind of a brute force approach, in which we backtracking from our mistake and try out another way.
 
 # Question:
@@ -14,3 +15,62 @@
 
 
 # Here, only valid path is 4 -> 1 -> 2
+
+## Since here, we have to go through every pos, then we may need to backtrack.
+
+
+#%%
+
+# Can we reach leafNode without any value 0 in path
+
+
+def canWeReachLeaf(root):
+    # Base Condn
+    if root.val == 0 or not root:
+        return False
+
+    # If leaf node (another Base Case)
+    if not root.left and not root.right:
+        return True
+
+    if canWeReachLeaf(root.right):
+        return True
+
+    if canWeReachLeaf(root.left):
+        return True
+
+    return False
+
+
+#%%
+
+# Show the path, for non-zero connect between root and leaf node
+
+# Lets assume only 1 path exists atmost
+
+
+def leafPath(root, path):
+
+    if not root or root.val == 0:
+        return False
+
+    path.append(root.val)
+
+    if not root.left and not root.right:
+        return True
+
+    if leafPath(root.left, path):
+        return True
+
+    if leafPath(root.right, path):
+        return True
+
+    # Ifs any sub tree is not true
+    # We backtrack
+    path.pop()
+
+    return False  # Goes to the parent recurse call, and proceeds.
+
+
+#%%
+# TC: O(n) worst case runs over all nodes.
