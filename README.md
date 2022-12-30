@@ -20,3 +20,8 @@
 - [ ] Backtracking
 - [ ] Dyanmic Programming
 - [ ] Bit Manipulation
+
+
+> Updated types
+> TODO:
+- [ ] types in LL, DLL
