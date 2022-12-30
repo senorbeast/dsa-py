@@ -15,7 +15,7 @@
 #%%
 
 
-def binarySearch(arr, target):
+def binarySearch(arr: list[int], target: int) -> int:
     left, right = 0, len(arr) - 1
 
     # Loop till boundaries are proper

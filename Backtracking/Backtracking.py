@@ -22,11 +22,12 @@
 #%%
 
 # Can we reach leafNode without any value 0 in path
+from TreesAndBST.trees import TreeNode
 
 
-def canWeReachLeaf(root):
+def canWeReachLeaf(root: TreeNode | None):
     # Base Condn
-    if root.val == 0 or not root:
+    if not root or root.val == 0:
         return False
 
     # If leaf node (another Base Case)

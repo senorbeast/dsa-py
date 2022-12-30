@@ -38,7 +38,7 @@
 # Stop when divded sub array len = 1
 
 
-def quickSort(arr, startIdx, endIdx):
+def quickSort(arr: list[int], startIdx: int, endIdx: int) -> list[int]:
 
     # Base Case, when len(arr) = 1 (Sorted sub array)
     # ! Cannot use endIdx - startIdx = 0, to indicate len(arr) = 1

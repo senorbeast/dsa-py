@@ -27,7 +27,7 @@ class Heap:
             # tmp = self.heap[i]
             # self.heap[i] = self.heap[i // 2]
             # self.heap[i // 2] = tmp
-            self.heap[i], self.heap[i // 2] = self.heap[i // 2], self.headp[i]
+            self.heap[i], self.heap[i // 2] = self.heap[i // 2], self.heap[i]
             i = i // 2
 
     ##  Popping
@@ -77,7 +77,7 @@ class Heap:
                 break  # Terminate while loop
 
     ## TC: O(logn)
-    def pop(self) -> int:
+    def pop(self) -> (int | None):
 
         # Empty heap (with dummy value)
         if len(self.heap) == 1:
@@ -96,7 +96,7 @@ class Heap:
         i = 1  # current root pointer
 
         ## Percolate Down
-        self.__percolateDown()
+        self.__percolateDown(i)
 
         # return popped root.
         return res

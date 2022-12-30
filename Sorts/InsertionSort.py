@@ -20,7 +20,7 @@ arr = [2, 3, 4, 1, 6]
 ## j will help us to insert (swap, swap...) the ith ele in the correct position in the sorted sub array
 
 # %%
-def insertionSort(arr):
+def insertionSort(arr: list[int]) -> list[int]:
     for i in range(1, len(arr)):
         # Pointer in sorted sub array, will be used for comparision with ith ele
         j = i - 1

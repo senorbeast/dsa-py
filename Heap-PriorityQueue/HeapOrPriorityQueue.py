@@ -50,7 +50,7 @@
 ## Root is always at index node.
 ## next we fill in 19 at index 2. 16 at index 3, and so on.
 
-arr = [0, 14, 19, 16, 21, 26, 19, 68, 65, 30]
+arr: list[int] = [0, 14, 19, 16, 21, 26, 19, 68, 65, 30]
 # left child = 2*i
 # right child = 2*i  + 1
 # parent  = i/2              (floor division)

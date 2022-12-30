@@ -14,9 +14,9 @@
 - [x] Trees
 - [x] BST
 - [x] Tree Traversal
+- [x] Heap Priority Queue
 - [ ] Hashing
 - [ ] Graphs
 - [ ] Backtracking
-- [ ] Heap Priority Queue
 - [ ] Dyanmic Programming
 - [ ] Bit Manipulation

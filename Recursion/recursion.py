@@ -12,7 +12,7 @@
 #### Factorial
 
 #%%
-def factorial(n):
+def factorial(n: int) -> int:
     if n <= 1:
         return 1
     return n * factorial(n - 1)
@@ -37,7 +37,7 @@ for i in range(1, 20):
 #%%
 
 
-def fibonaaci(n):
+def fibonaaci(n: int) -> int:
     if n <= 1:
         return 1
     return fibonaaci(n - 1) + fibonaaci(n - 2)

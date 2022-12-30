@@ -26,7 +26,7 @@
 from trees import TreeNode
 
 # Start search with root node (We can do it will any node possibly)
-def search(node, target):
+def search(node: TreeNode | None, target: int):
 
     # Base case (null node, child of left node, doesn't exist)
     if not node:

@@ -9,7 +9,7 @@
 from trees import TreeNode
 
 
-def insert(root, val):
+def insert(root: TreeNode | None, val: int):
 
     # no child exist
     if not root:
@@ -56,10 +56,9 @@ insert(newTree, 32)
 
 #%% Print Inorder
 
-from DFSforBST import *
+from DFSforBST import inorder, reverseOrder
 
 inorder(newTree)
-
 #%%
 reverseOrder(newTree)
 
@@ -68,7 +67,7 @@ reverseOrder(newTree)
 ## BST Remove
 
 
-def minValueNode(root):
+def minValueNode(root: TreeNode) -> TreeNode:
     curr = root
 
     # Till left child exists
@@ -85,7 +84,7 @@ def minValueNode(root):
 # Case 2: 2 children
 
 
-def removeNode(root, val):
+def removeNode(root: TreeNode | None, val: int) -> TreeNode | None:
 
     # No matching node
     if not root:
@@ -93,7 +92,7 @@ def removeNode(root, val):
 
     # Get to the node
     if val > root.val:
-        root.right = removeNode(root.right.val)
+        root.right = removeNode(root.right, val)
     elif val < root.val:
         root.left = removeNode(root.left, val)
     else:

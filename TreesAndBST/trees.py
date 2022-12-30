@@ -40,10 +40,10 @@
 
 
 class TreeNode:
-    def __init__(self, val):
+    def __init__(self, val: int):
         self.val = val
-        self.left = None
-        self.right = None
+        self.left: TreeNode | None = None
+        self.right: TreeNode | None = None
 
     def print(self):
         print()

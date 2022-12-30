@@ -9,7 +9,7 @@
 # Carryon with till the condition is meet.
 
 
-def customFun(value):
+def customFun(value: int) -> int:
     if value > 20:
         # Says value given is high
         return 1
@@ -21,7 +21,7 @@ def customFun(value):
         return 0
 
 
-def binarySearchCustom(low, high, customFun):
+def binarySearchCustom(low: int, high: int, customFun) -> int:
     mid = (low + high) // 2
 
     while low <= high:

@@ -14,7 +14,7 @@
 #%%
 
 
-def bucketSort(arr):
+def bucketSort(arr: list[int]) -> list[int]:
     bucket = [0] * (max(arr) + 1)
 
     # O(n)

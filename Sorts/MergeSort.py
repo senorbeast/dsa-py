@@ -15,7 +15,7 @@
 # Append rest of left/right arr, to mother arr when other arr has exhausted.
 
 
-def merge(arr, startIdx, midIdx, endIdx):
+def merge(arr: list[int], startIdx: int, midIdx: int, endIdx: int) -> None:
     leftArr = arr[startIdx : midIdx + 1]
     rightArr = arr[midIdx + 1 : endIdx + 1]
 
@@ -54,7 +54,7 @@ def merge(arr, startIdx, midIdx, endIdx):
         arrIdx += 1
 
 
-def mergeSort(arr, startIdx, endIdx):
+def mergeSort(arr: list[int], startIdx: int, endIdx: int) -> list[int]:
 
     # Base Case, when len(arr) = 1 (Sorted sub array)
     if endIdx - startIdx + 1 <= 1:  # Length of arr = 1

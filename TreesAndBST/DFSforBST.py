@@ -22,8 +22,10 @@
 
 #%%
 
+from trees import TreeNode
 
-def inorder(root):
+
+def inorder(root: TreeNode | None):
     if not root:
         return
     inorder(root.left)
@@ -50,7 +52,7 @@ def inorder(root):
 #%%
 
 
-def preorder(root):
+def preorder(root: TreeNode | None):
     if not root:
         return
 
@@ -62,7 +64,7 @@ def preorder(root):
 #%%
 
 
-def postorder(root):
+def postorder(root: TreeNode | None):
     if not root:
         return
 
@@ -74,7 +76,7 @@ def postorder(root):
 #%%
 
 
-def reverseOrder(root):
+def reverseOrder(root: TreeNode | None):
     if not root:
         return
 
