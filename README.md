@@ -24,7 +24,7 @@
 ### Adv Algorithms
 
 - Arrays
-    - [ ] Kadane's Alg
+    - [x] Kadane's Alg
     - [ ] Sliding Window Fixed Size
     - [ ] Sliding Window Variable Size
     - [ ] Two Pointers
