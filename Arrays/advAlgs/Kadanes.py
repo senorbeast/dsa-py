@@ -16,7 +16,7 @@
 # SC: O(1)
 
 
-def bruteForce(nums):
+def bruteForce(nums: list[int]) -> int:
     maxSum = nums[0]
 
     for i in range(len(nums)):
@@ -39,7 +39,7 @@ def bruteForce(nums):
 # Which we keep track by currSum (max sub array sum possible at particular index)
 
 
-def kadanes(nums):
+def kadanes(nums: list[int]) -> int:
     maxSum = nums[0]
     currSum = 0
 
@@ -60,7 +60,7 @@ def kadanes(nums):
 # Assuming there is exactly one result, no ties
 
 
-def slidingWindow(nums):
+def slidingWindow(nums: list[int]) -> tuple:
 
     maxSum = nums[0]
     maxLeft, maxRight = 0, 0

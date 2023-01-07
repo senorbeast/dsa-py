@@ -25,7 +25,7 @@
 
 - Arrays
     - [x] Kadane's Alg
-    - [ ] Sliding Window Fixed Size
+    - [x] Sliding Window Fixed Size
     - [ ] Sliding Window Variable Size
     - [ ] Two Pointers
     - [ ] Prefix Sums
