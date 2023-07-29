@@ -3,6 +3,11 @@
 > In context with dsa-py, LeetCode questions (in cpp, py)
 
 
+#### Linked List
+
+- Preferably create LL with empty head and tail Nodes. (Node with val = 0). It will be easier to handle removing and adding nodes.
+  Usefull in LRU Cache
+
 #### Hashmaps 
 
 - Relationships in between a collections of entities, can be transfer to another collections of entities. With HashMaps.
