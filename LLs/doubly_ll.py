@@ -1,9 +1,9 @@
 #%%
 class ListNode:
     def __init__(self, val):
-        self.val = val
-        self.next = None
-        self.prev = None
+        self.val: int = val
+        self.next: ListNode | None = None
+        self.prev: ListNode | None = None
 
 
 # Implementation for Doubly Linked List

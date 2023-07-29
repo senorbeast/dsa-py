@@ -39,7 +39,7 @@ def binarySearch(arr: list[int], target: int) -> int:
 
 # After each step, half of the arr is eliminated.
 
-# No. of steps required to divide the array to get singular element
+# X no. of steps required to divide the array to get singular element
 # n/(2**x) = 1
 # 2**x = n
 # x = logn         (base 2)
