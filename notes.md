@@ -21,3 +21,12 @@
 
 - Using constraint information.
   - Eg: Q.141 - // Stopping iteration with the constraint value. To solve in constant memory. 
+
+
+
+#### Question to revise
+
+- LRU cache (hashmaps to search nodes in O(1), LL to store recency order) 
+  - TC: O(1), SC: O(capacity) 
+  - both put and get functions affect recency order.
+  - dealloacte memory in cpp
