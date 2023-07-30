@@ -16,3 +16,22 @@
 
 - Using constraint information.
   - Eg: Q.141 - // Stopping iteration with the constraint value. To solve in constant memory. 
+
+
+
+#### Good cpp
+- shared meomry pointer
+- unique pointers
+- dont play around with pointers
+
+### For Interviews
+#### SDE 1
+- DSA
+- LLD
+- Machine Coding
+#### SDE 2
+- HLD
+
+
+#### Managerial
+- STAR
