@@ -38,16 +38,22 @@ def bruteForce(nums: list[int]) -> int:
 # Since we are not using any pointers, but implicitly there is a window
 # Which we keep track by currSum (max sub array sum possible at particular index)
 
+# The algorithm uses a greedy approach, and it maintains two variables,
+# maxSum to store the maximum subarray sum encountered so far,
+# and currSum to keep track of the maximum subarray sum ending at the current index.
+
 
 def kadanes(nums: list[int]) -> int:
     maxSum = nums[0]
-    currSum = 0
+    currSum = 0  # Info propogated
 
     # At every iteration, update what info is propogate and the res
-    # i.e. Info propogated here, is the currSum ( maximum sum subarray at that index can give)
+    # i.e. One choice is propagated here, is the currSum ( maximum sum subarray at that index can give)
     # and Res is the maxSum ( max currSum, max sub array sum)
     for n in nums:
-        currSum = max(currSum, 0)  # never add -ve to get maximum sum
+        # obivous we don't want to add -ve prev sum to currSum, since we want max value of sum of subArr.
+        # (To maximize the sum of subarray, ignore any negative previous sum and start a new subarray.)
+        currSum = max(currSum, 0)  # here currSum is basically prevSum
         currSum += n
         maxSum = max(currSum, maxSum)
 

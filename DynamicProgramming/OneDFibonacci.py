@@ -10,6 +10,9 @@
 # F(n) = F(n-1) + F(n-2)
 
 #%%
+
+# To get the nth Fibonacci Number
+
 # Brute Force
 def recurseFibo(n: int) -> int:
     if n <= 1:
@@ -17,6 +20,7 @@ def recurseFibo(n: int) -> int:
     return recurseFibo(n - 1) + recurseFibo(n - 2)
 
 
+# Coincidence or logic n = Height of the tree. ? [LOGIC]
 # Height of tree  = n
 #         5
 #     4       3
@@ -24,6 +28,13 @@ def recurseFibo(n: int) -> int:
 #  2 1 1 0  1 0
 # 1 0
 
+# Height of tree = n
+#            6
+#          5   4
+#        4  3  3  2
+#      3  2 2 1 2 1  1 0
+#     2 1 11 11  11
+#    1 1
 
 ## No. of elements in tree = 2^n
 ## Height : n
@@ -37,8 +48,15 @@ def recurseFibo(n: int) -> int:
 ## Memoization
 #%%
 
+# TC: O(n)
+# Only n elements are required to be calculated,
+# from the binary tree of recursion. Rest will be cached.
+# (See the tree example above)
 
-def memoization(n: int) -> int:
+# SC: O(n) [Caching n-1 values]
+
+
+def memoizedRecursionFibo(n: int) -> int:
 
     cache = {}
 
@@ -54,9 +72,10 @@ def memoization(n: int) -> int:
 ## Repeation is avoided.
 # But some SC is increased.
 
-print(memoization(5))
 
-# %%
+for i in range(10):
+    print(i, ":", memoizedRecursionFibo(i))
+
 
 # Also refered as Top Down DP.
 # Since, we are going from Top and recursing down, the tree
@@ -66,10 +85,16 @@ print(memoization(5))
 
 ## Bottom Up Approach
 
+# Basically, divide the problem, into sub problems and work upwards.
 # We are goint to start in bottom and work our way upward
 ## Sometimes called TRUE DP.
 
 # %%
+
+# TC: O(n)
+# SC: O(1)
+
+# Find Fibo at nth position
 def FiboDP(n):
     if n < 2:
         return n
@@ -78,7 +103,7 @@ def FiboDP(n):
     dp = [0, 1]
     i = 2
 
-    # Start from i go, adding till n
+    # Start from i, go adding till n
     # Loop over till we reach n (higher value)
     while i <= n:
         # Optimized to use on 2 positions in array
@@ -93,4 +118,7 @@ def FiboDP(n):
 
 print(FiboDP(5))
 
+
 # %%
+for i in range(10):
+    print(i, ":", FiboDP(i))

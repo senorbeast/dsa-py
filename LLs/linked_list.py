@@ -5,8 +5,8 @@
 
 class ListNode:
     def __init__(self, val):
-        self.val = val
-        self.next = None
+        self.val: int = val
+        self.next: ListNode | None = None
 
 
 # Implementation for Singly Linked List

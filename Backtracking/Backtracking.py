@@ -21,6 +21,8 @@
 
 #%%
 
+## Recursive Approach with Backtracking
+
 # Can we reach leafNode without any value 0 in path
 from TreesAndBST.trees import TreeNode
 
@@ -57,6 +59,7 @@ def leafPath(root, path):
 
     path.append(root.val)
 
+    # Leaf node
     if not root.left and not root.right:
         return True
 
@@ -67,6 +70,10 @@ def leafPath(root, path):
         return True
 
     # Ifs any sub tree is not true
+    # i.e
+    #   Not a leaf node
+    #   new root.left is 0 or new root.right is 0
+
     # We backtrack
     path.pop()
 
