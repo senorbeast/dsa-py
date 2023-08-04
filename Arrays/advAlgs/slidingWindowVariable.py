@@ -18,10 +18,13 @@ def longestSubarray(nums) -> int:
     L: int = 0
 
     for R in range(len(nums)):
+        # Update window when new R found.
         # Update L only if new subarray, if found.
         # i.e nums[R] is a new value compared to nums[L]
         if nums[L] != nums[R]:
             L = R
+
+        # if in same window, update length in each iteration
         length = max(length, R - L + 1)
 
     return length
@@ -44,9 +47,9 @@ arr2 = [2, 3, 1, 2, 4, 3]
 
 # TC: O(n):
 # The inner loop sometimes runs, sometimes once or more.
-# But the in total, the inner runs n times.
+##  But the in total, the inner runs n times.
 # # And not n*n as for usual inner loops. with O(n^2) TC.
-# So, here total TC is O(n)
+# So, here total TC is O(2n) = O(n)
 
 
 def shortestSubarray(nums, target) -> float:
@@ -56,8 +59,9 @@ def shortestSubarray(nums, target) -> float:
     for R in range(len(nums)):
         total += nums[R]  # Add nums till we reach target
 
-        # Shrink window if match, shrink till match
-        while total >= target:  # Match
+        # Keeping shrinking window if total sum is >= target
+        # Shrink from the left side, keep the right pointer at the same pos
+        while total >= target:  
             length = min(R - L + 1, length)  # Update res
             # For min length match, check with incre L
             total -= nums[L]

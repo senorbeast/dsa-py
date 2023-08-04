@@ -26,7 +26,29 @@
 
 #### Question to revise
 
-- LRU cache (hashmaps to search nodes in O(1), LL to store recency order) 
+- [LRU cache](https://github.com/senorbeast/leetCode/tree/main/0146-lru-cache) (hashmaps to search nodes in O(1), LL to store recency order)
   - TC: O(1), SC: O(capacity) 
   - both put and get functions affect recency order.
   - dealloacte memory in cpp
+
+- [Sliding Window variable](https://github.com/senorbeast/dsa-py/blob/dev/Arrays/advAlgs/slidingWindowVariable.py)
+  - :star: Shortest Subarray problem
+  - Seems to be O(n^2), but overall is O(n)
+
+
+#### Good cpp
+- shared meomry pointer
+- unique pointers
+- dont play around with pointers
+
+### For Interviews
+#### SDE 1
+- DSA
+- LLD
+- Machine Coding
+#### SDE 2
+- HLD
+
+
+#### Managerial
+- STAR

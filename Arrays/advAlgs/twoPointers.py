@@ -1,10 +1,12 @@
 # %%
 
-# Two pointers
+## Two pointers
 # Sliding window is subset of Two pointers
 
-# But in two pointers, we usually care about the eles
-# pointed by 2 pointer
+# But in two pointers, we usually care about the elements
+# pointed by 2 pointer,
+
+# But in sliding window we care about all the elements in between too.
 
 
 # %%
@@ -27,6 +29,11 @@ def palindrome(word) -> bool:
         R -= 1
 
     return True
+
+words = ["malayalam", "woow", "wow","b","","Goodbye"]
+for word in words:
+    print(word,": ",palindrome(word))
+
 
 
 # %%

@@ -25,3 +25,41 @@ Eg:
     - :bulb: If choices can't be logically deducted. Start from the reverse direction. 
     - Since any of route to victory doesn't matter.
     - (If we started propagation from the beginning we may not choose the victory path) 
+
+
+#### Sliding Window
+
+- :bulb: Think Sliding window when 
+    - subarray (contiguos sub part of an array)
+
+- Types
+    - Fixed: Rolling window, of fixed size
+    - Variable: 
+        - Keeping R pointer incrementing,
+        - Shrinking window from L side for a condn, with fixed R pointer.
+        - May look O(n^2), but the L pointer overall only traverses the array ones. TC: O(2n) = O(n)
+
+ 
+ #### Two pointers
+
+- :bulb: Think Two pointers when
+  - Want specific 2 elements.
+
+- Wide use of two pointers, in other algs
+
+    #### Sliding Window
+
+    - :bulb: Think Sliding Window when
+        - Need contiguos substring/subcollection from a bigger string/collection
+    
+    - :writing_hand: Condition, when subcollection is invalid
+        - if invalid move left pointer (maybe once/many time)
+        - right pointer is moved continuously usually
+    -  :star: Using while inner loop instead of a if condn: It allows the left pointer to move many times, to get a smaller window. This will cover all the possible substrings (n^2 substrings). (Not required for all the problems)
+
+#### preFixSum, postFixSum
+
+- Precompute preFixSum/PostFixSum(SuffixSum)
+    - Simple, preprocessing, reduced Time Complexity for further actions
+  - TC: the prefix sum array is O(n),
+  - TC: Each range sum query takes constant time O(1), making it an efficient solution for related problems.
