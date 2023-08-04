@@ -47,6 +47,16 @@ Eg:
 
 - Wide use of two pointers, in other algs
 
+    #### Sliding Window
+
+    - :bulb: Think Sliding Window when
+        - Need contiguos substring/subcollection from a bigger string/collection
+    
+    - :writing_hand: Condition, when subcollection is invalid
+        - if invalid move left pointer (maybe once/many time)
+        - right pointer is moved continuously usually
+    -  :star: Using while inner loop instead of a if condn: It allows the left pointer to move many times, to get a smaller window. This will cover all the possible substrings (n^2 substrings). (Not required for all the problems)
+
 #### preFixSum, postFixSum
 
 - Precompute preFixSum/PostFixSum(SuffixSum)
