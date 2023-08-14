@@ -63,3 +63,6 @@ Eg:
     - Simple, preprocessing, reduced Time Complexity for further actions
   - TC: the prefix sum array is O(n),
   - TC: Each range sum query takes constant time O(1), making it an efficient solution for related problems.
+
+  Left over problem approach
+  [Car Fleet](https://github.com/senorbeast/leetCode/blob/main/0853-car-fleet/0853-car-fleet.cpp)
