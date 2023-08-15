@@ -37,7 +37,7 @@ def bst(root: TreeNode | None ):
         print("Level:", level)
 
         # len(queue) acts as a snapshot of length of queue when the for loop starts.
-        for i in range(len(queue)):
+        for _ in range(len(queue)):
             curr = queue.popleft()
             print(curr.value)
             if curr.left:
@@ -45,6 +45,8 @@ def bst(root: TreeNode | None ):
             if curr.right:
                 queue.append(curr.right)
         level += 1
+
+#%%
 
 
 #%%
