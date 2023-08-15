@@ -3,6 +3,7 @@
 
 ## DFS and backtracking have a lot of overlap
 
+
 # Q: Count the unique paths from the top left ot the bottom right.
 # A single path may only move along 0's and can't visit
 # the same cell more than once.
@@ -27,12 +28,16 @@ then the parent calls its other children. This way covering a new path.
 # Count paths (backtracking)
 
 
-from typing import List
 
 
 # Recursive traverse the Matrix in (DFS manner), return 1 when a path reaches the target destination
 
-def dfs(grid: List[List[int]], r: int, c: int, visit: set[tuple[int,int]]) -> int:
+# n -> no. of elements in matrix
+# 4 paths for each node, in recursively (imagine as tree) (but actually called in stack, with backtracking)
+# TC: O(4^n)
+# SC: O(n)
+
+def dfs(grid: list[list[int]], r: int, c: int, visit: set[tuple[int,int]]) -> int:
 
     ROWS, COLS = len(grid), len(grid[0])
 
