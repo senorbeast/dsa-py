@@ -47,3 +47,26 @@ class TreeNode:
 
     def print(self):
         print()
+    
+    
+#%%
+
+# Example usage
+def create_ordered_tree(n):
+    def create_subtree(start, end):
+        if start > end:
+            return None
+        mid = (start + end) // 2
+        node = TreeNode(mid)
+        node.left = create_subtree(start, mid - 1)
+        node.right = create_subtree(mid + 1, end)
+        return node
+    
+    return create_subtree(1, n)
+
+
+# Example usage for creating a tree with 40 nodes
+newTree = create_ordered_tree(10)
+
+
+# %%

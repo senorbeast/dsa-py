@@ -24,6 +24,14 @@
 
 from trees import TreeNode
 
+# Traversal in order, for sorted trees 
+# Smallest values in left sub tree
+
+# Sorted Tree: 
+#          4
+#        3   6
+#      2    5   7 
+#
 
 def inorder(root: TreeNode | None):
     if not root:

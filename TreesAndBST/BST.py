@@ -18,7 +18,7 @@
 
 ## BST are recursive in nature,
 ## For a root node, its left node has A prop, right node has B property.
-## This applies to all parent-child relationship. Thats why BST recursive in nation
+## This applies to all parent-child relationship. Thats why are BST recursive in nature
 
 
 #%%
@@ -46,6 +46,7 @@ def search(node: TreeNode | None, target: int):
 
 ## Time Complexity:
 
+# Binary Search in Sorted BST
 # Balanced Tree: Height of left sub tree and right sub tree differ by 1.
 # For Balanced tree: O(logn)
 # For worst balanced tree: Well its a Linked list : O(n)
