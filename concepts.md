@@ -81,6 +81,9 @@ Eg:
   - Something in the future decides, the state of prev problems, create a stack for left over problem. Resolve them, with the future values. Thus, requiring one iteration.
   - Keeping track of left over problems. (Sometimes)
 
+  - :star: Left over problem approach
+    - [Car Fleet](https://github.com/senorbeast/leetCode/blob/main/0853-car-fleet/0853-car-fleet.cpp), [Largest rectangle area histogram](https://github.com/senorbeast/leetCode/blob/main/0084-largest-rectangle-in-histogram/0084-largest-rectangle-in-histogram.cpp)
+
 - Eg: Min Stack, Parentheses Problems,
 
 #### Trees (Recursive)
@@ -109,5 +112,3 @@ Eg:
       - SC: O(n * 2^n)
       - Auxillary TC: O(n)  (Space for nested n calls)
 
-  Left over problem approach
-  [Car Fleet](https://github.com/senorbeast/leetCode/blob/main/0853-car-fleet/0853-car-fleet.cpp)
