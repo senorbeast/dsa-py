@@ -112,3 +112,21 @@ Eg:
       - SC: O(n * 2^n)
       - Auxillary TC: O(n)  (Space for nested n calls)
 
+
+#### Backtracking (DFS++)
+
+- :bulb: Think concept if:
+
+- :writing_hand: Points for Coding it
+  - Keep track of visited List (memoize visited nodes/vertex for 1 path)
+  - :star: For more paths, remove current node from visited list,
+  so its sibling in the stack call, (parent's another child in callstack)
+  can go through the node.
+
+  Basics:
+
+  - Return 1 for succesfull path
+  - Recursively DFS for each node, pass along visited list
+
+- :star: Unique points
+
