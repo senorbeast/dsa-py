@@ -26,16 +26,16 @@
 - Arrays
     - [x] Kadane's Alg
     - [x] Sliding Window Fixed Size
-    - [ ] Sliding Window Variable Size
-    - [ ] Two Pointers
-    - [ ] Prefix Sums
+    - [x] Sliding Window Variable Size
+    - [x] Two Pointers
+    - [x] Prefix Sums
 
 - Linked List 
-    - [ ] Fast and Slow Pointers
+    - [x] Fast and Slow Pointers
 
 - Trees
-    - [ ] Trie
-    - [ ] Union-Find
+    - [x] Trie
+    - [x] Union-Find
     - [ ] Segment Tree
     - [ ] Iterative DFS
 
