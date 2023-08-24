@@ -10,12 +10,6 @@
 
 ---
 
-#### TC, SC
-
-- Omega:  "Ω(n)" denotes best-case time complexity, a lower bound on operations in optimal scenarios.
-- Theta: "Θ(n)" signifies average-case time complexity, where operations grow linearly on average for all inputs.
-- Oh: O(n)" represents worst-case time complexity, indicating an upper bound on operations as input size grows.
-
 #### Greedy
 
 A greedy algorithm is an intuitive problem-solving approach that makes the best possible decision at each step, hoping for a globally optimal solution.
@@ -112,7 +106,6 @@ Eg:
       - SC: O(n * 2^n)
       - Auxillary TC: O(n)  (Space for nested n calls)
 
-
 #### Backtracking (DFS++)
 
 - :bulb: Think concept if:
@@ -129,4 +122,3 @@ Eg:
   - Recursively DFS for each node, pass along visited list
 
 - :star: Unique points
-
