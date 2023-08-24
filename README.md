@@ -15,7 +15,7 @@
 - [x] Tree Traversal
 - [x] Heap Priority Queue
 - [ ] Hashing
-- [ ] Graphs
+- [x] Graphs
 - [x] Backtracking
 - [ ] Dyanmic Programming
 - [ ] Bit Manipulation
@@ -42,10 +42,6 @@
 - Heaps
     - [ ] Two Heaps
 
-- Backtracking
-    - [ ] Subsets
-    - [ ] Combinations
-    - [ ] Permutations
 
 - Graphs 
     - [ ] Dijkstra's 
