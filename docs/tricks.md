@@ -24,7 +24,9 @@
     Go over the hashmap, and copy the relationship.
     (Relation should be encoded in the elements/entities itself).
 
--
+#### Recursion
+
+- Merge Sort and Quick Sort, both use recursion, but one uses postorder, the latter uses preorder.
 
 #### Out of the box
 
