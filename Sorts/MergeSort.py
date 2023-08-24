@@ -6,6 +6,39 @@
 # Naturally done by recursion
 
 
+### Time Complexity
+
+### Dividing the arrs to halfs
+#
+# Height of Binary Tree = logn
+
+# How many times can we divide it?
+# Till we get length of arrs = 1
+# n / (2**k) = 1
+# n =  2**k
+# logn = k
+# k = logn
+
+# Time Complexity of Each Layer
+
+# O(n) for merge, of Top layer  (Which includes n times comparisons)   ((# Insertion sort had O(n^2) comparisions))
+# Even for bottom layer with 1 ele each, there would be n arrs to merge. So O(n)
+
+
+# Total Time Complexity
+# O(n) for Each layer
+# logn layers
+## O(nlogn) Time Complexity
+
+
+### Space Complexity
+# O(n), since we are creating new arrs for each layer (Recursion Stack)
+
+# Stable Sorting ?
+# We can code it to be unstable sort
+## Stable Sort
+
+
 #%%
 # Merge Sort is Divide and Conquer Alg
 
@@ -16,7 +49,8 @@
 
 
 def merge(arr: list[int], startIdx: int, midIdx: int, endIdx: int) -> None:
-    leftArr = arr[startIdx : midIdx + 1]
+    # Copies of arr
+    leftArr = arr[startIdx : midIdx + 1] 
     rightArr = arr[midIdx + 1 : endIdx + 1]
 
     leftIdx = 0
@@ -87,36 +121,5 @@ arr2 = [3, 4, 2, 5, 1, 6]
 print(mergeSort(arr, 0, len(arr) - 1))
 print(mergeSort(arr2, 0, len(arr2) - 1))
 
-### Time Complexity
-
-### Dividing the arrs to halfs
-#
-# Height of Binary Tree = logn
-
-# How many times can we divide it?
-# Till we get length of arrs = 1
-# n / (2**k) = 1
-# n =  2**k
-# logn = k
-# k = logn
-
-# Time Complexity of Each Layer
-
-# O(n) for merge, of Top layer  (Which includes n times comparisons)   ((# Insertion sort had O(n^2) comparisions))
-# Even for bottom layer with 1 ele each, there would be n arrs to merge. So O(n)
-
-
-# Total Time Complexity
-# O(n) for Each layer
-# logn layers
-## O(nlogn) Time Complexity
-
-
-### Space Complexity
-# O(n), since we are creating new arrs for each layer (Recursion Stack)
-
-# Stable Sorting ?
-# We can code it to be unstable sort
-## Stable Sort
 
 # %%

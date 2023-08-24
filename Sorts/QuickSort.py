@@ -91,7 +91,7 @@ print(quickSort(arr2, 0, len(arr2) - 1))
 
 # %%
 
-# Stable
+# Stablity
 # May not preserve the relative order during tie, due to swaps.
 
 ## Quick Sort is Unstable sorting alg.

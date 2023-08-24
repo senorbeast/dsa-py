@@ -6,6 +6,8 @@
 
 ##### SC
 
-- All space required for the program to run.
-  - So, even if you are just returning an array (of size input array), SC minimum would be O(n).
-  -
+- "How much additional memory is needed by the algorithm to process the input data?"
+
+- Types:
+  - Auxiliary Space Complexity: Extra memory used by the algorithm for variables, data structures, and execution overhead, beyond the input.
+  - Input Space Complexity: Memory needed to hold input data, typically treated as constant since it's inherent to the problem statement. (unaffected by the algorithm's structure or design)
