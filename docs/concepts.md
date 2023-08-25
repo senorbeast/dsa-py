@@ -96,7 +96,7 @@ It efficiently narrows down the search space and often leads to linear or linear
 
 - Eg: Min Stack, Parentheses Problems
 
-#### Trees (Recursive)
+#### Trees (+ Recursion Decision Tree)
 
 - :bulb: Think Trees when
   - There's a common pattern that branches into choices
@@ -141,3 +141,46 @@ It efficiently narrows down the search space and often leads to linear or linear
 
 - :star: Unique points
   - Exploring All Paths: It's ideal for combinatorial problems where all combinations need to be evaluated.
+
+#### Dynamic Programming
+
+- Optimizing recursive functions
+
+##### Top-Down DP (Memoization)
+
+- Breaking the Problem into Sub-problem, solving the sub problem
+- :star: Problem, subproblem can be usually be related in form of Equation in DP
+
+- Memoization (Caching) (Optimizing recursion) (Top-Down DP)
+  - Think Fibonacci 5 -> reqs f(4), f(3) -> reqs ...
+  - :writing_hand: Points for Coding it
+    - Write the recursive brute force approach
+    - Cache result.
+    - Use cache if available, as addn base condn.
+  - :bulb: Think Memoization DP when:
+    - Parts of recursive decision tree are repeated
+    - :star: Optimizing TC of recursive function by caching.
+  - Usless, when all decision nodes of tree are unique.
+
+##### Bottom Up DP (True DP)
+
+- Understand the recursive way for it.
+- Mathematically calculate, by referencing the recursive returns.
+- May use maths tricks, more base condns. (More defined boundaries, to make the pattern of calc easier)
+- Loop in reverse order, (BOTTOM-UP)
+
+- Bottom-Up DP (called True DP by some)
+  - Think Bottom-up Fibonacci 0 + 1 = 2, 1 + 2 = 3....
+  - :bulb: Think Bottom-Up DP when:
+    - :star: Optimize SC of memoizedRecursiveFunction.
+- :writing_hand: Points for Coding it
+  - Go over recursive approach, think over, from bottom up of the recursive decsion tree
+  - How one entity is related to other mathematically
+  - Creating more boundaries (base condn like), can help ease the maths
+  - Look for pattern, how one entity depends on its next.
+
+- Eg: Counting paths with DP
+  - Here 2 pieces of information were used for each iteration
+  - prevRow (empty initially), last element of each row be will 1
+  - These were used to calc the no. of paths available at each node. (We got to know we should do this because we thought recursively first)
+    - currRow[c] = currRow[c+1] + prevRow[c], our equation for each element of the currRow.

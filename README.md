@@ -17,7 +17,7 @@
 - [ ] Hashing
 - [x] Graphs
 - [x] Backtracking
-- [ ] Dyanmic Programming
+- [x] Dyanmic Programming
 - [ ] Bit Manipulation
 
 
