@@ -1,4 +1,4 @@
-#%%
+# %%
 
 # Divide and Conquer
 # Break up the original arr to sub arr by spliting in halves. Till we get array of length 1, then compare?
@@ -6,7 +6,7 @@
 # Naturally done by recursion
 
 
-#%%
+# %%
 # Merge Sort is Divide and Conquer Alg
 
 # Stop when arr len = 1
@@ -15,7 +15,10 @@
 # Append rest of left/right arr, to mother arr when other arr has exhausted.
 
 
-def merge(arr: list[int], startIdx: int, midIdx: int, endIdx: int) -> None:
+from typing import List
+
+
+def merge(arr: List[int], startIdx: int, midIdx: int, endIdx: int) -> None:
     leftArr = arr[startIdx : midIdx + 1]
     rightArr = arr[midIdx + 1 : endIdx + 1]
 
@@ -54,11 +57,9 @@ def merge(arr: list[int], startIdx: int, midIdx: int, endIdx: int) -> None:
         arrIdx += 1
 
 
-def mergeSort(arr: list[int], startIdx: int, endIdx: int) -> list[int]:
-
+def mergeSort(arr: List[int], startIdx: int, endIdx: int) -> List[int]:
     # Base Case, when len(arr) = 1 (Sorted sub array)
     if endIdx - startIdx + 1 <= 1:  # Length of arr = 1
-
         return arr
 
     # Find the midIdx

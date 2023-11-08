@@ -9,18 +9,36 @@
 # We will be using an interative approach
 
 
+from typing import List
+
+
 arr = [2, 3, 4, 1, 6]
 
 ## Assume 1 ele as [2] an sorted sub array
 ## We have a sorted sub array and an unsorted sub array
 ## We will pick the first element of the unsorted sub array and insert it into the sorted sub array
-## Do Swaps
+## With Swaps
+
+# For i at 3;
+# j = i - 1
+# arr = [ 1,2,4,5, 3  ,6]
+#               j j+1
+#
+
+# Swap and Decr j, till arr[j] > arr[j+1]
+
+# arr = [ 1,2,4, 3,  5,6]
+#             j j+1
+
+# Compare jth and j+1th element
+# and keep comparing with the prev elements (by decrementing j). Till its at right place
 ## i -> Pointer for fresh variable in unsorted array
 ## j -> Pointer in sorted sub array, will be used for comparision with ith ele
 ## j will help us to insert (swap, swap...) the ith ele in the correct position in the sorted sub array
 
+
 # %%
-def insertionSort(arr: list[int]) -> list[int]:
+def insertionSort(arr: List[int]) -> List[int]:
     for i in range(1, len(arr)):
         # Pointer in sorted sub array, will be used for comparision with ith ele
         j = i - 1
@@ -31,7 +49,7 @@ def insertionSort(arr: list[int]) -> list[int]:
     return arr
 
 
-#%%
+# %%
 arr = [3, 4, 2, 5, 1, 6]
 print(insertionSort(arr))
 
