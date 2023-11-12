@@ -1,7 +1,10 @@
-## Pushing a value to Heap/Priority Queue
+## MinHeap: A min-heap is a binary tree such that the data contained in each node 
+# is less than (or equal to) the data in that node's children
+
+## Pushing a value to Heap/Priority Queue or Min Heap
 
 # Following the Structure property. We need to insert at the end.
-# For the Order property. The added node must have less value/equal to the parent. (for min heap),
+# For the Order property. The added node must have more value/equal to the parent. (for min heap),
 ## OR we would need to swap parent node and new node recursively till Order property is followed. (to maintain order property)
 
 
@@ -9,7 +12,7 @@
 
 # Heap class
 
-
+# Min Heap
 class Heap:
     def __init__(self):
         self.heap = [0]
@@ -22,8 +25,9 @@ class Heap:
 
         # Percolate up (to maintain order property)
 
-        while self.heap[i] <= self.heap[i // 2]:
-            # Swap till Order Property is followed, i.e. every parent has less value than its child. (min heap)
+        while self.heap[i] < self.heap[i // 2]:
+            # Swap till Order Property is followed (Keep swapping till parent > child)
+            # i.e. every parent has less value than its child. (min heap)
             # tmp = self.heap[i]
             # self.heap[i] = self.heap[i // 2]
             # self.heap[i // 2] = tmp
@@ -43,32 +47,32 @@ class Heap:
     # Since heap/priority queue follows the structure property, its always a balanced tree.
     # So, height is logn
 
-    ## Helper function # Percolate down
-    # O(logi)
+    ## Helper function # Percolate down, to satisfy the order property
+    # O(logn)            (n is total elements in the heap)
+    # logn is the height of the tree, max operations would be the height of the tree.
+
     def __percolateDown(self, i: int) -> None:
 
-        # Percolate Down (Only runs till we atleast the left child)
-        while 2 * i < len(self.heap):
-            # Do we also have a right child,
-            # and if right child is smaller than left child
-            # and current node is greater than current root.
-            ## Swap right child and current root. (pointer)
-            ## New current root pointer will be our right child (# Percolate down)
+        # Percolate Down (Only runs till, we atleast have the  left)  [left child is 2*i]
 
+        # Comparing order doesn't matter, you can compare right child first or left, 
+        # Just make sure before swapping the min of the 3 is the new parent.
+        while 2 * i < len(self.heap):  # Only run till, we atleast have the  left. [More percolating maybe required]
             if (
-                2 * i + 1 < len(self.heap)
-                and self.heap[2 * i + 1] < self.heap[2 * i]
-                and self.heap[i] > self.heap[2 * i + 1]
+                2 * i + 1 < len(self.heap) # Do we also have a right child? [right child is (2*i) +1],
+                and self.heap[2 * i + 1] < self.heap[2 * i] # and if right child is smaller than left child
+                and self.heap[i] > self.heap[2 * i + 1] # and current node is greater than the right child
             ):
+                ## Swap right child and current root. (pointer) [Percolate down if current node is greater than the right child]
                 tmp = self.heap[i]
                 self.heap[i] = self.heap[2 * i + 1]
                 self.heap[2 * i + 1] = tmp
+                ## New current root pointer will be our right child (# Percolate down)
                 i = 2 * i + 1
 
             # Else if current root > left child
             ## Swap left child and current root
             ## New current root pointer will be our left child (# Percolate down)
-
             elif self.heap[i] > self.heap[2 * i]:
                 self.heap[i], self.heap[2 * i] = self.heap[2 * i], self.heap[i]
                 i = 2 * i
@@ -105,7 +109,26 @@ class Heap:
     # Description in Heapify.py
 
     ## TC: O(n)
-    def heapify(self, arr) -> None:
+    # Bottom layer doesn't need to percolate down. Operations reqd:   0 * (n/2)
+
+    # 2nd last layer, can percolate once at max. Operations reqd: 1 * (n/4)     
+    # [ 1 level down (max) to percolate for n/4 elements]
+    
+    # Total Operations: 
+    # n -> Total no. of elements
+    # h -> height of tree 
+
+    # 0 * (n/2) + 1 *(n/4) + 2 * (n/8) + 3 * (n/16) + .... + (h*1)
+    # n/4 * (Summation k = 1 to h of (k/(2^(k-1))))
+
+    # TC = O(n)  [Heapify, build min/max heap from array]
+
+    # Sorting is done in O(n)
+    # But if we want an array from the heap, 
+    # Popping required O(logn) for each element
+    # Therefore, sorting an array requires O(nlogn) with heapify and popping to array in order.
+
+    def heapify(self, arr: list) -> None:
 
         # Satisfy structure prop
         # Not using the 1st index. (So, bringing the first index at the end.)
@@ -117,7 +140,7 @@ class Heap:
         # parent of i = i//2
         ## Can't percolate down on leaf nodes anyway.
         ## No, need to percolate over half the elements in tree.
-        curr = (len(self.heap) - 1) // 2
+        curr = (len(self.heap) - 1) // 2 
 
         # Percolate Down for each parent.
         # Two nested loops ? Damn boi

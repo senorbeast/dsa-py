@@ -13,17 +13,18 @@
 
 ## Disadvantage:
 # Searching is ## TC: O(n)
-# BST Searching ## TC: O(logn)
+# While, BST Searching ## TC: O(logn)
 
 ## Coding Interviews, Heaps/Priority Queue are used a lot.
 ## We need to use min/max value a lot.
 # Heapify TC: O(n)
 # Push/Pop TC: O(logn)
 # Find Min/Max TC: O(1)
+# Find any element is TC: O(n)         [Disadv]
 
 ## What is heap?
 # Simple: Priortize min/max values
-# Interface as per a Queue, but under the hood its a Heap.
+# Interface as per a Queue, but under the hood its a Heap.(in form of an Array)
 
 
 # Here Priority Queue, is implemented with a Binary Heap (min or max)
@@ -41,8 +42,8 @@
 #  And Nodes must be added from left to right, which will bring empty nodes to the right.
 
 # 2. Order property
-# Recursively, root node must be greater than both its sub trees.
-# So min value is the root node ## For max heap, we would want smaller instead of greater.
+# Recursively, root node must be less than both its sub trees. (for min heap)
+# So min value is the root node ## For max heap, we would want greater instead of smaller.
 
 
 ## Although Binary Heaps can look like binary trees, they are implemented as an array.
@@ -53,7 +54,7 @@
 arr: list[int] = [0, 14, 19, 16, 21, 26, 19, 68, 65, 30]
 # left child = 2*i
 # right child = 2*i  + 1
-# parent  = i/2              (floor division)
+# parent  = i/2              (floor division) or divide then floor 
 
 ## These properties are true since, they follow the Structure property, without any holes.
 
