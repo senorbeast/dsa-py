@@ -19,7 +19,7 @@
 
 # Q. Find cyclic or not
 
-edges = [[1, 2], [4, 1], [2, 4]]  # Bidirectional
+# edges = [[1, 2], [4, 1], [2, 4]]  # Bidirectional
 
 ## Solution
 # Steps:
@@ -56,12 +56,12 @@ edges = [[1, 2], [4, 1], [2, 4]]  # Bidirectional
 # though not truly constant time, due to the gradual growth of alpha(n).
 
 # n: represent nodes/numbers from 1 to n
-
+from typing import Dict
 
 class UnionFind:
-    def __init__(self, n) -> None:
-        self.par = {}  # Store Parent of each node
-        self.rank = {}  # Rank for each node
+    def __init__(self, n:int) -> None:
+        self.par: Dict[int, int] = {}  # Store Parent of each node
+        self.rank: Dict[int, int] = {}  # Rank for each node
 
         for i in range(1, n + 1):
             self.par[i] = i  # For Root Node = Init its parent as itself
@@ -73,7 +73,7 @@ class UnionFind:
     ## With Optimization: path compression
     ## TC: O(logn)
 
-    def find(self, n):
+    def find(self, n: int) -> int:
         p = self.par[n]
 
         # Find node before root node
@@ -84,7 +84,7 @@ class UnionFind:
         return p
 
     # Unionize trees
-    def union(self, n1, n2):
+    def union(self, n1: int, n2: int) -> bool:
         p1, p2 = self.find(n1), self.find(n2)
 
         # Same root nodes implies, cyclic tree (unionized tree)

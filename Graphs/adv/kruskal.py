@@ -21,15 +21,18 @@
 # SC: O(E)
 
 import heapq
+from typing import List, Tuple
 
 from TreesAndBST.adv.unionFind_DisjointSets import UnionFind
 
 
-def minimumSpanningTree(edges, n):
-    minHeap = []
-    for n1, n2, weight in edges:
-        heapq.heappush(minHeap, [weight, n1, n2])
+def minimumSpanningTree(edges: List[Tuple[int, int, int]], n: int) -> List[Tuple[int, int]]:
+
+    minHeap: List[Tuple[int, int,int]] = [] # cost, src, dst
     
+    for n1, n2, weight in edges:
+        heapq.heappush(minHeap, (weight, n1, n2))
+
     unionFind = UnionFind(n)
     mst = []
 
@@ -37,6 +40,6 @@ def minimumSpanningTree(edges, n):
         weight, n1, n2 = heapq.heappop(minHeap)
         if not unionFind.union(n1, n2):
             continue
-        mst.append([n1, n2])
+        mst.append((n1, n2))
 
     return mst
