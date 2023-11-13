@@ -55,12 +55,12 @@ def visualize_graph_equal_length(edges, n, shortest_path_result):
     plt.title("Graph Visualization with Equal Edge Lengths and Shortest Path Highlighted")
     plt.show()
 
-# Example usage
-edges = [(1, 2, 10), (1, 3, 5), (2, 3, 2), (2, 4, 1), (3, 2, 3), (3, 4, 9), (3, 5, 2), (4, 5, 4), (5, 4, 6)]
-n = 5
-src = 1
+# # Example usage
+# edges = [(1, 2, 10), (1, 3, 5), (2, 3, 2), (2, 4, 1), (3, 2, 3), (3, 4, 9), (3, 5, 2), (4, 5, 4), (5, 4, 6)]
+# n = 5
+# src = 1
 
-shortest_path_result = shortestPathWithPrev(edges, n, src)
-print("Shortest Path:", shortest_path_result)
+# shortest_path_result = shortestPathWithPrev(edges, n, src)
+# print("Shortest Path:", shortest_path_result)
 
-visualize_graph_equal_length(edges, n, shortest_path_result)
+# visualize_graph_equal_length(edges, n, shortest_path_result)
