@@ -1,5 +1,7 @@
 ## Dijkstra's Algorithm
 
+# Greedy Alg, just like Prims, Kruskals
+
 ## What ?
 # Dijkstra's is a shortest path algo, gives shortest path to every node, from the root node.
 

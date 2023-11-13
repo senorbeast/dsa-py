@@ -1,7 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-
 from dijkstras_visualized import shortestPathWithPrev
 
 

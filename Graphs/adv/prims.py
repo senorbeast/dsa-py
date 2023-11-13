@@ -1,6 +1,7 @@
 ## Prim's Algorithm
 
 ## What?
+# Greedily get MST from graph.
 # Gives the minium spanning tree (MST), from an graph.
 # 1. Can give cost of MST
 # or 2. Find the MST  (There can exist multiple MST for a graph)
