@@ -2,7 +2,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-from viz import shortestPathWithPrev
+from dijkstras_visualized import shortestPathWithPrev
 
 
 def update(frame):

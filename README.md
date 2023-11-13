@@ -44,8 +44,8 @@
 
 
 - Graphs 
-    - [ ] Dijkstra's 
-    - [ ] Prim's
+    - [x] Dijkstra's 
+    - [x] Prim's
     - [ ] Kruskal's 
     - [ ] Topological Sort
 
@@ -55,7 +55,11 @@
     - [ ] LCS
     - [ ] Palindromes
 
+#### Run
 
+```bash
+pip install -r req.txt
+```
 
 > TODO:
 - [ ] types in LL, DLL

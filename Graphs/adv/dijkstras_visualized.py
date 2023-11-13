@@ -5,7 +5,6 @@ import heapq
 
 
 def shortestPathWithPrev(edges: List[Tuple[int, int, int]], n: int, src: int) -> Dict[int, Tuple[int, int]]:
-
     # Converting edges to adj list
     adj: Dict[int, List[Tuple[int, int]]] = {}
     for i in range(1, n + 1):
@@ -16,10 +15,10 @@ def shortestPathWithPrev(edges: List[Tuple[int, int, int]], n: int, src: int) ->
         adj[s].append((d, w))
 
     # Dijkstra's
-    shortest: Dict[int, Tuple[int, int]] = {} # {node: (cost, prevNode)}
+    shortest: Dict[int, Tuple[int, int]] = {}  # {node: (cost, prevNode)}
     minHeap: List[Tuple[int, int, int]] = [(0, src, src)]  # (cost, node, prevNode)
     # Since heapq function uses the first key to sort/update minHeap.
-
+    
     while minHeap:
         # Got shortest path for node (if new node)
         w1, n1, prev = heapq.heappop(minHeap)
@@ -35,7 +34,7 @@ def shortestPathWithPrev(edges: List[Tuple[int, int, int]], n: int, src: int) ->
     return shortest
 
 
-def visualize_graph_equal_length(edges, n, shortest_path_result):
+def visualize_graph_equal_length(edges: List[Tuple[int, int, int]], n: int, shortest_path_result: Dict[int, Tuple[int, int]], src: int) -> None:
     G = nx.DiGraph()
 
     for s, d, w in edges:
@@ -55,12 +54,12 @@ def visualize_graph_equal_length(edges, n, shortest_path_result):
     plt.title("Graph Visualization with Equal Edge Lengths and Shortest Path Highlighted")
     plt.show()
 
-# # Example usage
-# edges = [(1, 2, 10), (1, 3, 5), (2, 3, 2), (2, 4, 1), (3, 2, 3), (3, 4, 9), (3, 5, 2), (4, 5, 4), (5, 4, 6)]
-# n = 5
-# src = 1
+# Example usage
+edges: List[Tuple[int, int, int]] = [(1, 2, 10), (1, 3, 5), (2, 3, 2), (2, 4, 1), (3, 2, 3), (3, 4, 9), (3, 5, 2), (4, 5, 4), (5, 4, 6)]
+n: int = 5
+src: int = 1
 
-# shortest_path_result = shortestPathWithPrev(edges, n, src)
-# print("Shortest Path:", shortest_path_result)
+shortest_path_result: Dict[int, Tuple[int, int]] = shortestPathWithPrev(edges, n, src)
+print("Shortest Path:", shortest_path_result)
 
-# visualize_graph_equal_length(edges, n, shortest_path_result)
+visualize_graph_equal_length(edges, n, shortest_path_result, src)
