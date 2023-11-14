@@ -34,10 +34,13 @@
 ## TC: O(2^c), SC: O(c)
 # c -> capacity
 
-def dfs(profit, weight, capacity):
+from typing import List
+
+
+def dfs(profit: List[int], weight: List[int], capacity: int) -> int:
     return dfsHelper(0, profit, weight, capacity)
 
-def dfsHelper(i, profit, weight, capacity):
+def dfsHelper(i: int, profit: List[int], weight: List[int], capacity: int) -> int:
     if i == len(profit):
         return 0
     
@@ -48,6 +51,7 @@ def dfsHelper(i, profit, weight, capacity):
     newCap = capacity - weight[i]
     if newCap >= 0:
         p = profit[i] + dfsHelper(i, profit, weight, newCap)  # Unbounded vs 0/1 Knapsack 
+
         # Compute the max
         maxProfit = max(maxProfit, p)
 
@@ -58,13 +62,19 @@ def dfsHelper(i, profit, weight, capacity):
 # TC: O(n*m), SC: O(n*m)
 # n -> no. of items, m -> capacity
 
-def memoization(profit, weight, capacity):
+def memoization(profit: List[int], weight: List[int], capacity: int) -> int:
     # A 2D array, with N rows and M + 1 columns, init -1's
     N, M = len(profit), capacity
     cache = [[-1] * (M + 1) for _ in range(N)]
+
+    # Print the initial state of the cache
+    print("Initial Cache:")
+    for row in cache:
+        print(row)
+
     return memoHelper(0, profit, weight, capacity, cache)
 
-def memoHelper(i, profit, weight, capacity, cache):
+def memoHelper(i: int, profit: List[int], weight: List[int], capacity: int, cache: List[List[int]]) -> int:
     if i == len(profit):
         return 0
     if cache[i][capacity] != -1:
@@ -79,6 +89,12 @@ def memoHelper(i, profit, weight, capacity, cache):
         p = profit[i] + memoHelper(i, profit, weight, newCap, cache)
         # Compute the max
         cache[i][capacity] = max(cache[i][capacity], p)
+    
+    # Print the state of the cache after each recursive call
+    print(f"\nCache After Recursive Call ({i}, {capacity}):")
+    for row in cache:
+        print(row)
+
 
     return cache[i][capacity]
       
@@ -89,8 +105,7 @@ def memoHelper(i, profit, weight, capacity, cache):
 
 # TODO: Try filling the DP table Bottom Up, (Top Down in Decision Tree)
 
-
-def dp(profit, weight, capacity):
+def dp(profit: List[int], weight: List[int], capacity: int) -> int:
     N, M = len(profit), capacity
     dp = [[0] * (M + 1) for _ in range(N)]
 
@@ -99,7 +114,12 @@ def dp(profit, weight, capacity):
         dp[i][0] = 0
     for c in range(M + 1):
         if weight[0] <= c:
-            dp[0][c] = profit[0]
+            dp[0][c] = (c // weight[0]) * profit[0] 
+    
+    # Print the initial state of the DP table
+    print("Initial DP Table:")
+    for row in dp:
+        print(row)
     
     for i in range(1, N):
         for c in range(1, M + 1):
@@ -107,7 +127,12 @@ def dp(profit, weight, capacity):
             include = 0
             if c - weight[i] >= 0:
                 include = profit[i] + dp[i][c - weight[i]]
-                dp[i][c] = max(include, skip)
+            dp[i][c] = max(include, skip)
+        
+        # Print the state of the DP table after each iteration
+        print(f"\nDP Table After Iteration {i}:")
+        for row in dp:
+            print(row)
     
     return dp[N-1][M]
 
@@ -115,9 +140,13 @@ def dp(profit, weight, capacity):
 ## Space Optimized DP (Bottom Up)
 # TC: O(n * m), SC: O(m)
 
-def optimizedDp(profit, weight, capacity):
+def optimizedDp(profit: List[int], weight: List[int], capacity: int) -> int:
     N, M = len(profit), capacity
     dp = [0] * (M + 1)  #prevRow
+
+     # Print the initial state of the DP table
+    print("Initial DP Table:")
+    print(dp)
 
     for i in range(N):
         curRow = [0] * (M + 1)
@@ -127,6 +156,30 @@ def optimizedDp(profit, weight, capacity):
             if c - weight[i] >= 0:
                 include = profit [i] + curRow[c - weight[i]]
             curRow[c] = max(include, skip)
+        
+        # Print the state of the DP table after each iteration
+        print(f"\nDP Table After Iteration {i}:")
+        print(curRow)
+
         dp = curRow
 
     return dp[M]
+
+
+# Call the function with your input
+profit = [1, 2, 5]
+weight = [1, 2, 3]
+capacity = 5
+
+result = dfs(profit, weight, capacity)
+print(f"\nMaximum Profit Recursion: {result}")
+
+
+# resultM = memoization(profit, weight, capacity)
+# print(f"\nMaximum Profit Memoized Recursion: {resultM}")
+
+resultDP = dp(profit, weight, capacity)
+print(f"\nMaximum Profit DP: {resultDP}")
+
+resultODP = optimizedDp(profit, weight, capacity)
+print(f"\nMaximum Profit Optimized DP: {resultODP}")
