@@ -30,7 +30,7 @@ from typing import Dict
 class TrieNode:
     def __init__(self) -> None:
         self.word: bool = False
-        self.children: Dict[str, TrieNode] = {}
+        self.children: Dict[str, TrieNode] = {}  # char stored as key here
 
 
 ## Empty root node with

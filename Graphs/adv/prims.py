@@ -50,7 +50,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 
-def minimumSpanningTree(edges: List[Tuple[int, int, int]], n: int) -> List[Tuple[int, int]]:
+def primMST(edges: List[Tuple[int, int, int]], n: int) -> List[Tuple[int, int]]:
     # Create adjacency list
     adj: dict[int, List[Tuple[int, int]]] = {}  # {node: []}
 
@@ -88,7 +88,7 @@ def minimumSpanningTree(edges: List[Tuple[int, int, int]], n: int) -> List[Tuple
 
 
 
-def visualize_prim_mst(edges: List[Tuple[int, int, int]], n: int, mst_edges: List[Tuple[int, int]]) -> None:
+def highlight_mst_edges(edges: List[Tuple[int, int, int]], n: int, mst_edges: List[Tuple[int, int]]) -> None:
     G = nx.Graph()
 
     for s, d, w in edges:
@@ -111,6 +111,6 @@ edges: List[Tuple[int, int, int]] = [(1, 2, 10), (1, 3, 5), (2, 3, 2), (2, 4, 1)
 n: int = 5
 
 # Prim's MST function
-mst_edges = minimumSpanningTree(edges, n)
+mst_edges = primMST(edges, n)
 
-visualize_prim_mst(edges, n, mst_edges)
+highlight_mst_edges(edges, n, mst_edges)

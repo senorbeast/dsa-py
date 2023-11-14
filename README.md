@@ -46,7 +46,7 @@
 - Graphs 
     - [x] Dijkstra's 
     - [x] Prim's
-    - [ ] Kruskal's 
+    - [x] Kruskal's 
     - [ ] Topological Sort
 
 - Dynamic Programming
