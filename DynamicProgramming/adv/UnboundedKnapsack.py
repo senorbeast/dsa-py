@@ -1,17 +1,16 @@
 ## Unbounded Knapsack
 
+## Question
+# Given a list of N items, and a backpack with a limited capacity, return the maximum total profit that
+# can be contained in the backpack. The i-th item's profit is profit[i] and it's weight is weight[i].
+# Assume you can have and unlimited number of each item available.
+
 ## How ?
 # Decision Tree, if we chose a particular item or not, recursively (for each item). 
 # Till we reach the max capacity. (Capacity is reduced as we make decisions)
 # All possible combinations, are taken into account, with the Decision Tree. 
 #
 # In Unbounded Knapsack, we can choose repeated items.
-
-
-# Given a list of N items, and a backpack with a limited capacity, return the maximum total profit that
-# can be contained in the backpack. The i-th item's profit is profit[i] and it's weight is weight[i].
-# Assume you can have and unlimited number of each item available.
-
 
 ## Decision Tree
 # Organize the Decision Tree, then we know, which subproblems are solve by which section of tree.
@@ -41,29 +40,35 @@ def dfs(profit: List[int], weight: List[int], capacity: int) -> int:
     return dfsHelper(0, profit, weight, capacity)
 
 def dfsHelper(i: int, profit: List[int], weight: List[int], capacity: int) -> int:
+    # Base Case, we go out of bounds of the profit index
     if i == len(profit):
         return 0
     
     # Skip item i
-    maxProfit = dfsHelper(i+1, profit, weight, capacity)
-
+    skip = dfsHelper(i+1, profit, weight, capacity)
+    
+    include = 0
     # Include item i
     newCap = capacity - weight[i]
     if newCap >= 0:
-        p = profit[i] + dfsHelper(i, profit, weight, newCap)  # Unbounded vs 0/1 Knapsack 
+        include = profit[i] + dfsHelper(i, profit, weight, newCap)  # Unbounded vs 0/1 Knapsack 
+        # include = profit[i] + dfsHelper(i + 1, profit, weight, newCap) # For 0/1 Knapsack (can't repeate items), next item (i + 1)
 
-        # Compute the max
-        maxProfit = max(maxProfit, p)
+    # Choose the branch based on max profit
+    return max(skip, include)
 
-    return maxProfit
 
 ## Recursion with memoization (Top-Down DP as per Decision Tree)
 
 # TC: O(n*m), SC: O(n*m)
 # n -> no. of items, m -> capacity
+# SC: Cache size, n*m 
 
 def memoization(profit: List[int], weight: List[int], capacity: int) -> int:
-    # A 2D array, with N rows and M + 1 columns, init -1's
+    # A 2D array, with N rows and M + 1 columns, init -1's 
+    # Rows: Items index (O to N-1) give N rows
+    # Column: Capacity (0 to M) give M + 1 columns
+
     N, M = len(profit), capacity
     cache = [[-1] * (M + 1) for _ in range(N)]
 
