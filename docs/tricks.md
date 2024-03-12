@@ -48,6 +48,8 @@
 - unique pointers
 - dont play around with pointers
 
+
+
 ### For Interviews
 
 #### SDE 1
@@ -63,3 +65,12 @@
 #### Managerial
 
 - STAR
+
+
+#### Weird Bugs
+
+
+git might not recognize case name changes by default
+```
+git config core.ignorecase false
+```
