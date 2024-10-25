@@ -109,4 +109,7 @@ preorder(newTree)
 # %%
 postorder(newTree)
 
+# %%
+newTree.print_tree()
 
+# %%

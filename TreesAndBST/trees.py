@@ -45,9 +45,29 @@ class TreeNode:
         self.left: TreeNode | None = None
         self.right: TreeNode | None = None
 
-    def print(self):
-        print()
-    
+    def print_tree(self, indent_width=4):
+        """
+        Prints a binary tree in a visually appealing format.
+
+        Args:
+            indent_width: The number of spaces to use for indentation.
+        """
+
+        def _print_tree(node, indent=""):
+            if node is None:
+                return
+
+            if node.right:
+                _print_tree(node.right, indent + " " * (indent_width + 1))
+
+            print(indent + "└" + "─" * indent_width + f" {node.val}")
+
+            if node.left:
+                _print_tree(node.left, indent + "│" + " " * indent_width)
+
+        _print_tree(self)
+
+
     
 #%%
 
