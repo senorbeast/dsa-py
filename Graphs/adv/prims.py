@@ -34,7 +34,8 @@
 # In Prims
 # Keeping track of src, dst for each edge, for the edges of MST
 # [IMP] We don't add weights, since we don't want the path, we just want individual edges to connect all nodes.
-# We are trying to minimize total edge cost for whole network, not thinking in term of a minimizing path cost from A to E 
+# We are trying to minimize total edge cost for whole network,
+# not thinking in term of a minimizing path cost from A to E 
 
 ## TC: 
 # Worst Case: Adding E edges (E = V^2) to minHeap

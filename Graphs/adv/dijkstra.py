@@ -7,7 +7,8 @@
 
 ## Why?
 # BFS works for unweighted graph, but for weighted graph we require Dijkstra's Algorithm
-# BFS goes layer by layer, doesn't look at weights, Dijkstra's is a "Greedy" BFS which takes weights into account for greediness.
+# BFS goes layer by layer, doesn't look at weights, Dijkstra's is a "Greedy" BFS 
+# which takes weights into account for greediness.
 
 ## How ?
 
@@ -18,10 +19,11 @@
 # 2. Go to the node at top of minHeap. Update minHeap, with the nodes edges, add prev node's cost.
 # 3. The resultant cost of each node from start, will be given by key of minHeap.
 
-# This works because we have the minHeap always giving us the cheapest/shortest path to traverse, to visit each node from the start.
+# This works because we have the minHeap always giving us the cheapest/shortest path to traverse,
+# to visit each node from the start.
 
 ## Problem
-# Starting from A, find the length of the shorted path to every other node.
+# Starting from A, find the length of the shortest path to every other node.
 # A, B, C, D, E
 # 0     3
 
@@ -63,14 +65,17 @@ def shortestPath(edges: List[Tuple[int, int, int]], n: int, src: int) -> Dict[in
         adj[s].append((d, w))
 
     # Dijkstra's
-    shortest: Dict[int, int] = {}
-    minHeap: List[Tuple[int, int]] = [(0, src)]
+    shortest: Dict[int, int] = {}  # keep storing result
+    minHeap: List[Tuple[int, int]] = [(0, src)]  # Priority Queue/minHeap of Dijkstra's
+    # Since heapq function uses the first key to sort/update minHeap. 
+    # First key is cost
 
     while minHeap:
         # Got shortest path for node (if new node)
         w1, n1 = heapq.heappop(minHeap)
         if n1 in shortest:
             continue
+        # since n1 not in shortest, add now
         shortest[n1] = w1
 
         # For neighbours of n1

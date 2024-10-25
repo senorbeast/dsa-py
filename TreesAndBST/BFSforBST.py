@@ -25,7 +25,7 @@ from collections import deque
 from trees import TreeNode
 
 
-def bst(root: TreeNode | None ):
+def bfsbst(root: TreeNode | None ): 
     queue = deque()
 
     if root:

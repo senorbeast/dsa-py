@@ -6,7 +6,7 @@
 
 #         4
 #      3    6
-#     2    5 7
+#     2    5   7
 
 # o/p
 # 2 3 4 5 6 7
@@ -107,3 +107,6 @@ reverseOrder(newTree)
 preorder(newTree)
 
 # %%
+postorder(newTree)
+
+
