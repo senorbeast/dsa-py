@@ -28,11 +28,12 @@ While it doesn't guarantee optimal solutions, it's efficient for some problems l
 Eg:
 
 - [Kadane's Alg](https://github.com/senorbeast/dsa-py/blob/dev/Arrays/advAlgs/Kadanes.py) : maxSum of subarray is calcuated at every index, and propogated if needed for maxSum of subarray.
+
   - Choice it to propagate prevSum or use propagate 0, if prevSum is -ve.
 
 - [Maximum SubArray (Kadane's Alg)](https://github.com/senorbeast/leetCode/tree/main/0053-maximum-subarray): Same as above
 
-- [Jump Sum](https://github.com/senorbeast/leetCode/tree/main/0055-jump-game):      :star: Choice propogation starts from the end to beginning. The Goal is brought closer to the start.
+- [Jump Sum](https://github.com/senorbeast/leetCode/tree/main/0055-jump-game): :star: Choice propogation starts from the end to beginning. The Goal is brought closer to the start.
   - :bulb: If choices can't be logically deducted. Start from the reverse direction.
   - Since any of route to victory doesn't matter.
   - (If we started propagation from the beginning we may not choose the victory path)
@@ -55,7 +56,9 @@ Eg:
 #### Two pointers
 
 - :bulb: Think Two pointers when
+
   - Want specific 2 elements.
+  - of we can fix 1 element, and need 2 pointers (Three Sum Problem)
 
 - Wide use of two pointers, in other algs
 
@@ -71,6 +74,7 @@ Eg:
 - First In, Last Out
 - Last In , First Out
 - :bulb: Think Stacks when
+
   - Last entry is required next
   - Something in the future decides, the state of prev problems, create a stack for left over problem. Resolve them, with the future values. Thus, requiring one iteration.
   - Keeping track of left over problems. (Sometimes)
@@ -80,9 +84,33 @@ Eg:
 
 - Eg: Min Stack, Parentheses Problems,
 
+#### Binary Search
+
+- :bulb: Think Binary search when
+  - Finding solution in a collection of solutions
+  - When we can divide the collection in half, maybe with few edge cases
+- :writing_hand: Points for Coding it
+  - If we need to regress to a solution, keep the track of the mid value
+
+#### Hashmap
+
+- :bulb: Think Hashmap when
+  - Comparing previously visited elements. (hash key it in a deterministic way)
+    - Via frequency count
+    - complement
+    - any function
+
+#### Recursion - Tree
+
+- We run a function for each node of a tree
+- If we want a local var for each function, we pass it in the function
+- The local var is personal to each node/function
+- If we want a global var, we don't pass it in the function
+
 #### Trees (Recursive)
 
 - :bulb: Think Trees when
+
   - We have common part, then branching into choice
   - Recursiveness
   - Choices
@@ -90,31 +118,33 @@ Eg:
 
 - Complexities
 - TC => Usually no. of nodes in the tree visited/created
-- SC => Usually Max depth of recurse call * space used for each call
+- SC => Usually Max depth of recurse call \* space used for each call
 
 - x nodes => TC: O(x)
 - height =>
+
   - b branches from each node
-    - x = b^h => h =  log(x/b)
+    - x = b^h => h = log(x/b)
 
 - Power Set
 - Levels(height of tree) = n
   - If 2 nodes at each level
   - Total no. of nodes in tree = 2^n
     - If passing the n length output to next call, and saving output in each call not in place.
-      - TC: O(n * 2^n)
-      - SC: O(n * 2^n)
-      - Auxillary TC: O(n)  (Space for nested n calls)
+      - TC: O(n \* 2^n)
+      - SC: O(n \* 2^n)
+      - Auxillary TC: O(n) (Space for nested n calls)
 
 #### Backtracking (DFS++)
 
 - :bulb: Think concept if:
 
 - :writing_hand: Points for Coding it
+
   - Keep track of visited List (memoize visited nodes/vertex for 1 path)
   - :star: For more paths, remove current node from visited list,
-  so its sibling in the stack call, (parent's another child in callstack)
-  can go through the node.
+    so its sibling in the stack call, (parent's another child in callstack)
+    can go through the node.
 
   Basics:
 
@@ -123,11 +153,8 @@ Eg:
 
 - :star: Unique points
 
-
 #### Graphs
-
-
 
 #### Dynamic Programming
 
-- 
+-
