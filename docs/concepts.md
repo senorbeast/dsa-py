@@ -107,6 +107,16 @@ Eg:
 - The local var is personal to each node/function
 - If we want a global var, we don't pass it in the function
 
+
+- A function which calls itself
+- It should have a end condn or it will keep on calling itself
+  - End condn can be a early return
+  - Or condn recursive call
+
+- The no. of recursive calls in a function is the branches it take at each/that step/node
+- Eg. DFS of a binary tree, has 2 recursive calls in that function.
+
+
 #### Trees (Recursive)
 
 - :bulb: Think Trees when
@@ -135,14 +145,21 @@ Eg:
       - SC: O(n \* 2^n)
       - Auxillary TC: O(n) (Space for nested n calls)
 
-#### Backtracking (DFS++)
+  - OR
+  - height of tree = logX
+  - n = logX
+  - X = 2**n
+
+  
+
+#### Backtracking (DFS++) 
 
 - :bulb: Think concept if:
 
 - :writing_hand: Points for Coding it
 
   - Keep track of visited List (memoize visited nodes/vertex for 1 path)
-  - :star: For more paths, remove current node from visited list,
+  - :star: For more paths, remove current node from visited list, ??
     so its sibling in the stack call, (parent's another child in callstack)
     can go through the node.
 
