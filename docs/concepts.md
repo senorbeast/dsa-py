@@ -155,6 +155,8 @@ Eg:
 #### Backtracking (DFS++) 
 
 - :bulb: Think concept if:
+   - Building solution step by step (while recursion is solving sub problem step by step)
+   - Basically recursion + building res  (we usually have void return for the function)
 
 - :writing_hand: Points for Coding it
 
