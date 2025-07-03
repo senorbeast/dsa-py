@@ -177,3 +177,22 @@ Eg:
 #### Dynamic Programming
 
 -
+    # My Thoughts:
+
+    # True DP, is something very optimized, i can't think of it intivitively, I have to trace out the decision tree
+    # Find subproblem, with overlapping solution to bigger problem
+    # Find a pattern, and now, we only code the pattern (the recurrent formula)
+    # Not the whole decision tree 
+
+    # Very methodological
+    
+    # Test Methodology Steps:
+    # 1. Visualize the problem
+    # 2. Find an appropriate subproblem
+    # 3. Find relationships among subproblems
+        # Helps to ask questions here, what subproblems are require to solve a subproblem
+    # 4. Generalize the relationship
+    # 5. Implement by solving subproblems in order
+
+    # Trick
+    # We can keep track of previous problem in cache, if we need to the path of decision tree or DAG (Directly Acyclic Graph)
