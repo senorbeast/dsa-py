@@ -150,9 +150,9 @@ Eg:
   - n = logX
   - X = 2**n
 
-  
 
-#### Backtracking (DFS++) 
+
+#### Backtracking (DFS++)
 
 - :bulb: Think concept if:
    - Building solution step by step (while recursion is solving sub problem step by step)
@@ -176,23 +176,18 @@ Eg:
 
 #### Dynamic Programming
 
--
-    # My Thoughts:
+Dynamic Programming is a method for solving complex problems by breaking them down into simpler, overlapping subproblems. It solves each subproblem only once and stores their solutions to avoid redundant computations.
 
-    # True DP, is something very optimized, i can't think of it intivitively, I have to trace out the decision tree
-    # Find subproblem, with overlapping solution to bigger problem
-    # Find a pattern, and now, we only code the pattern (the recurrent formula)
-    # Not the whole decision tree 
+- :bulb: Think Dynamic Programming if:
+  - The problem has overlapping subproblems and optimal substructure.
+  - You can find a pattern or recurrence relation after tracing out a decision tree.
 
-    # Very methodological
-    
-    # Test Methodology Steps:
-    # 1. Visualize the problem
-    # 2. Find an appropriate subproblem
-    # 3. Find relationships among subproblems
-        # Helps to ask questions here, what subproblems are require to solve a subproblem
-    # 4. Generalize the relationship
-    # 5. Implement by solving subproblems in order
+- :writing_hand: Points for Coding it:
+  - **Visualize**: See the problem as a decision tree.
+  - **Subproblem**: Find the appropriate subproblem. Helps to ask question here, what subproblems are required o solve a subproblem
+  - **Relate**: Find relationships among subproblems.
+  - **Generalize**: Formulate the recurrence relation.
+  - **Implement**: Solve subproblems in order (bottom-up or top-down).
 
-    # Trick
-    # We can keep track of previous problem in cache, if we need to the path of decision tree or DAG (Directly Acyclic Graph)
+- :star: Unique points:
+  - We can keep track of previous problem's solutions in a cache. This is useful if we need to reconstruct the path of the decision tree or see the problem as a DAG (Directed Acyclic Graph).
