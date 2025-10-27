@@ -123,7 +123,7 @@ class Heap:
 
     # TC = O(n)  [Heapify, build min/max heap from array]
 
-    # Sorting is done in O(n), (not actually)
+    # Heapify is done in O(n), (elements are sorted in correct levels) (not fully sorted)
     # But if we want an array from the heap, 
     # Popping required O(logn) for each element
     # Therefore, sorting an array requires O(nlogn) with heapify and popping to array in order.
